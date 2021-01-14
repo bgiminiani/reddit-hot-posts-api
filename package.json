@@ -1,0 +1,7 @@
+{
+  "name": "reddit-hot-posts-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bruno Giminiani <giminiani@gmail.com>",
+  "license": "MIT"
+}
