@@ -2,6 +2,8 @@ import express from 'express'
 import axios from 'axios'
 import IHotPost from './IHotPost'
 
+import './database'
+
 const app = express()
 
 const URI_HOTPOSTS = 'https://api.reddit.com/r/artificial/hot'
