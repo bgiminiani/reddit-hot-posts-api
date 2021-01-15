@@ -19,7 +19,8 @@ export class CreateHotPosts1610644176934 implements MigrationInterface {
           },
           {
             name: 'author_fullname',
-            type: 'varchar'
+            type: 'varchar',
+            isNullable: true
           },
           {
             name: 'author',

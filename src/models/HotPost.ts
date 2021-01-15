@@ -11,8 +11,8 @@ class HotPosts {
   @Column()
   authorName: string
 
-  @Column()
-  author_name: string
+  @Column({ nullable: true })
+  authorFullname: string
 
   @Column()
   creationDate: Date
