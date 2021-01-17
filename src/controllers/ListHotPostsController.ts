@@ -17,7 +17,7 @@ class ListHotPostsController {
         return response.json({error: `Date invalid: finalDate`})
       }
 
-      if(!orderBy.includes('ups','comments')){
+      if(!['ups','comments'].includes(orderBy)){
         return response.json({error: `Orderby invalid: must be 'ups' or 'comments'`})
       }
       
