@@ -16,6 +16,10 @@ class ListHotPostsController {
       if(!finalDateIsValid) {
         return response.json({error: `Date invalid: finalDate`})
       }
+
+      if(!orderBy.includes('ups','comments')){
+        return response.json({error: `Orderby invalid: must be 'ups' or 'comments'`})
+      }
       
       const parsedInitialDate = parseISO(initialDate)
       const parsedfinalDate = parseISO(finalDate)
