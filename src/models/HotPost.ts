@@ -8,19 +8,31 @@ class HotPosts {
   @Column()
   postTitle: string
 
-  @Column()
+  @Column({ 
+    name: 'post_title',
+    nullable: true
+   })
   authorName: string
 
-  @Column({ nullable: true })
+  @Column({ 
+    name: 'author_fullname',
+    nullable: true 
+  })
   authorFullname: string
 
-  @Column()
+  @Column({name: 'created'})
   creationDate: Date
 
-  @Column()
+  @Column({ 
+    name: 'ups',
+    nullable: true 
+  })
   numberOfUps: number
 
-  @Column()
+  @Column({ 
+    name: 'comments',
+    nullable: true 
+  })
   numberOfComments: number
 }
 export default HotPosts
