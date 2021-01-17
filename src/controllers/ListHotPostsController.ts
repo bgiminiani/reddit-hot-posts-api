@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { parseISO } from 'date-fns'
+import { parseISO, isDate, isValid } from 'date-fns'
 import ListHotPostsService from '../services/ListHotPostsService'
 
 class ListHotPostsController {
@@ -7,6 +7,16 @@ class ListHotPostsController {
     try {
       const { initialDate, finalDate, orderBy } = request.body
 
+      const initialDateIsValid = isValid(new Date(initialDate))
+      if(!initialDateIsValid) {
+        return response.json({error: `Date invalid: initialDate`})
+      }
+
+      const finalDateIsValid = isValid(new Date(finalDate))
+      if(!finalDateIsValid) {
+        return response.json({error: `Date invalid: finalDate`})
+      }
+      
       const parsedInitialDate = parseISO(initialDate)
       const parsedfinalDate = parseISO(finalDate)
 
