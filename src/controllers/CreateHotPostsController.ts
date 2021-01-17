@@ -17,7 +17,7 @@ class CreateHotPostsController {
         const hotPost: IHotPost = {
           postTitle: child.data.title,
           authorName: child.data.author_fullname,
-          author_name: child.data.author,
+          authorFullName: child.data.author,
           creationDate: parseISO(formatISO(fromUnixTime(child.data.created))),
           numberOfUps: child.data.ups,
           numberOfComments: child.data.num_comments

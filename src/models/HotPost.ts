@@ -5,20 +5,24 @@ class HotPosts {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
-  postTitle: string
-
   @Column({ 
     name: 'post_title',
     nullable: true
    })
-  authorName: string
+  postTitle: string
 
   @Column({ 
     name: 'author_fullname',
     nullable: true 
   })
-  authorFullname: string
+  authorFullName: string
+
+  @Column({
+    name: 'author_name',
+    nullable: true
+  })
+  authorName: string
+
 
   @Column({name: 'created'})
   creationDate: Date
