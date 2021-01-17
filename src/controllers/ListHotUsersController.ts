@@ -6,6 +6,10 @@ class ListHotUsersController {
     try {
       const { orderBy } = request.body
 
+      if(!['ups','comments'].includes(orderBy)){
+        return response.json({error: `Orderby invalid: must be 'ups' or 'comments'`})
+      }
+
       const listHotUsers = new ListHotUsersService()
       const hotPosts = await listHotUsers.execute(orderBy)
       return response.json(hotPosts)
