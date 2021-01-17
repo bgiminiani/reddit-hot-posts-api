@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { parseISO, isDate, isValid } from 'date-fns'
+import { parseISO, isValid } from 'date-fns'
 import ListHotPostsService from '../services/ListHotPostsService'
 
 class ListHotPostsController {
@@ -33,7 +33,7 @@ class ListHotPostsController {
       return response.json(hotPosts)
     } catch (error) {
       console.error(error) 
-      return response.json({error: 'Internal Server Error'})
+      return response.json(error)
     }
   }
 }
