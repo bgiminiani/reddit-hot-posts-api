@@ -14,7 +14,7 @@ export class CreateHotPosts1610644176934 implements MigrationInterface {
             default: 'uuid_generate_v4()'
           },
           {
-            name: 'title',
+            name: 'post_title',
             type: 'varchar'
           },
           {
@@ -23,8 +23,9 @@ export class CreateHotPosts1610644176934 implements MigrationInterface {
             isNullable: true
           },
           {
-            name: 'author',
-            type: 'varchar'
+            name: 'author_name',
+            type: 'varchar',
+            isNullable: true
           },
           {
             name: 'created',
@@ -32,11 +33,13 @@ export class CreateHotPosts1610644176934 implements MigrationInterface {
           },
           {
             name: 'ups',
-            type: 'integer'
+            type: 'integer',
+            isNullable: true
           },
           {
             name: 'comments',
-            type: 'integer'
+            type: 'integer',
+            isNullable: true
           }
         ]
       })

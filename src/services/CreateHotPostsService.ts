@@ -14,6 +14,7 @@ class CreateHotPostsService {
   private async executeTransaction (hotPosts: IHotPost[],
     @TransactionRepository(HotPost)
     hotPostsRepository: Repository<HotPost>): Promise<IHotPost[]> {
+
     await hotPostsRepository
       .createQueryBuilder()
       .delete()

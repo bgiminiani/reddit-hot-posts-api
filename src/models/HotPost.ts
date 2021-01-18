@@ -5,22 +5,38 @@ class HotPosts {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
+  @Column({ 
+    name: 'post_title',
+    nullable: true
+   })
   postTitle: string
 
-  @Column()
+  @Column({ 
+    name: 'author_fullname',
+    nullable: true 
+  })
+  authorFullName: string
+
+  @Column({
+    name: 'author_name',
+    nullable: true
+  })
   authorName: string
 
-  @Column({ nullable: true })
-  authorFullname: string
 
-  @Column()
+  @Column({name: 'created'})
   creationDate: Date
 
-  @Column()
+  @Column({ 
+    name: 'ups',
+    nullable: true 
+  })
   numberOfUps: number
 
-  @Column()
+  @Column({ 
+    name: 'comments',
+    nullable: true 
+  })
   numberOfComments: number
 }
 export default HotPosts

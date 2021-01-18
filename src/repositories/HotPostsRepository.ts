@@ -25,7 +25,7 @@ class HotPostsRepository extends Repository<HotPost> {
     const findHotPosts = await this.find({
       select: [
         'authorName',
-        'authorFullname',
+        'authorFullName',
         'creationDate',
         'numberOfUps',
         'numberOfComments'
