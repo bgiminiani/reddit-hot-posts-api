@@ -4,7 +4,7 @@ import { IHotPost } from '../protocols'
 
 class GetHotPostsFromRedditAPIService {
   public async execute (): Promise<IHotPost[]> {
-    const URI_HOTPOSTS = 'https://api.reddit.com/r/artificial/hot'
+    const URI_HOTPOSTS = process.env.URI_API_REDDIT_HOTPOSTS
     try {
       const redditResponse = await axios.get(URI_HOTPOSTS)
       const responseData = redditResponse.data

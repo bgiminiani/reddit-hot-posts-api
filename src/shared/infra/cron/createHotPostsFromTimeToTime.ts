@@ -2,7 +2,7 @@ import cron from 'node-cron'
 import CreateHotPostsService from '../../../services/CreateHotPostsService'
 import GetHotPostsFromRedditAPIService from '../../../services/GetHotPostsFromRedditAPIService'
 
-const CRON_SCHEDULE = '*/1 * * * *'
+const CRON_SCHEDULE = process.env.CRON_SCHEDULE 
 const createHotPostsFromTimeToTime = async (): Promise<void> => {
   const createHotPostsService = new CreateHotPostsService() 
   const getHotPostsFromRedditAPI = new GetHotPostsFromRedditAPIService()
