@@ -2,7 +2,6 @@ import { isBefore } from 'date-fns'
 import { getCustomRepository } from 'typeorm'
 import HotPost from '../models/HotPost'
 import HotPostsRepository from '../repositories/HotPostsRepository'
-import AppError from '../shared/errors/AppError'
 
 interface IRequest {
   initialDate: Date
@@ -13,14 +12,6 @@ interface IRequest {
 class ListHotPostsService {
   public async execute ({ initialDate, finalDate, orderBy }: IRequest): Promise<HotPost[]> {
     const hotPostsRepository = getCustomRepository(HotPostsRepository)
-<<<<<<< HEAD
-=======
-
-    if(isBefore(finalDate, initialDate)){
-      throw new AppError('The initialDate cannot be greater than the finalDate')
-    }
-
->>>>>>> d3eb5684bfdab4c1ea2d4420473c4c86303ace0c
     const hotPosts = await hotPostsRepository.listByDateInterval({
       initialDate,
       finalDate,
